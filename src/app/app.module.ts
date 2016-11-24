@@ -4,16 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { OrderEffects } from './effects/order';
-import { AppComponent } from './containers/app';
-import { reducer } from './reducers';
+import { Effects } from './effect';
+import { reducer } from './reducer';
+import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
     StoreModule.provideStore(reducer),
-    EffectsModule.run(OrderEffects)
+    EffectsModule.run(Effects)
   ],
   declarations: [
     AppComponent
